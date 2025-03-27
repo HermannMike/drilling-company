@@ -1,18 +1,4 @@
-body {
-    text-align:center;
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url(../Pictures/Screenshots/download.jpeg);
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    height: 100vh;
-    margin: 0;
-}
-
-canvas{
-    border:2px solid rgb(255, 8, 0);
-    background-color: aliceblue;
-}/* Basic reset */
+/* Reset and basic styles */
 * {
     margin: 0;
     padding: 0;
@@ -20,10 +6,24 @@ canvas{
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../Pictures/Screenshots/download.jpeg); /* Ensure the path is correct */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4; /* Fallback color */
 }
 
+/* Canvas styling */
+canvas {
+    border: 2px solid rgb(255, 8, 0);
+    background-color: aliceblue;
+}
+
+/* Header styling */
 header {
     background-color: #333;
     color: white;
@@ -51,6 +51,7 @@ nav ul li a {
     text-decoration: none;
 }
 
+/* Hero section */
 .hero {
     background-color: #0073e6;
     color: white;
@@ -76,6 +77,7 @@ nav ul li a {
     background-color: #e68a00;
 }
 
+/* Services section */
 .services {
     padding: 2rem;
     background-color: #f4f4f4;
@@ -105,6 +107,7 @@ nav ul li a {
     margin-bottom: 10px;
 }
 
+/* Footer styling */
 footer {
     background-color: #333;
     color: white;
@@ -115,6 +118,7 @@ footer {
     bottom: 0;
 }
 
+/* Modal for displaying content */
 .modal {
     display: none;
     position: fixed;
@@ -143,3 +147,4 @@ footer {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
