@@ -66,4 +66,55 @@ app.get('/api/submissions', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
+// script.js
+
+// Modal functionality (same as before)
+const contactBtn = document.getElementById("contactBtn");
+const contactModal = document.getElementById("contactModal");
+const closeModal = document.querySelector(".close");
+
+contactBtn.addEventListener("click", () => {
+    contactModal.style.display = "flex";
+});
+
+closeModal.addEventListener("click", () => {
+    contactModal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target === contactModal) {
+        contactModal.style.display = "none";
+    }
+});
+
+// Handle contact form submission
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // Send the form data to the backend API
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, email, message }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert('Form submitted successfully!');
+            contactModal.style.display = "none";
+        } else {
+            alert('Error: ' + data.error);
+        }
+    } catch (error) {
+        alert('Something went wrong. Please try again later.');
+    }
+});
 
