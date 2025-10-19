@@ -1,0 +1,2 @@
+- [x] Edit public/style.css to add Unsplash image as background for .hero section
+- [ ] Run the site locally to verify the background image displays correctly in the hero section

@@ -8,7 +8,7 @@
 body {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(../Pictures/Screenshots/download.jpeg); /* Ensure the path is correct */
+    background-image: url('https://media.istockphoto.com/id/916625022/photo/drilling-on-the-geothermal-well-platform-and-equipments-on-a-cloudy-day.jpg?s=612x612&w=0&k=20&c=CwNYIi3mfcG6Nwtzg5l797-ER6NYpcnFMoOIaWNaUaU='); /* New background image */
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -53,7 +53,10 @@ nav ul li a {
 
 /* Hero section */
 .hero {
-    background-color: #0073e6;
+    background-image: url('https://plus.unsplash.com/premium_photo-1682148230470-2b67a322ab34?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Ym9yZWhvbGUlMjBkcmlsbGluZ3xlbnwwfHwwfHx8MA%253D%253D&fm=jpg&q=60&w=3000');
+    background-size: cover;
+    background-position: center;
+    background-color: #0073e6; /* Fallback color */
     color: white;
     padding: 50px;
     text-align: center;
@@ -61,6 +64,7 @@ nav ul li a {
 
 .hero h2 {
     font-size: 2.5rem;
+    color: white;
 }
 
 .hero button {
@@ -80,13 +84,30 @@ nav ul li a {
 /* Services section */
 .services {
     padding: 2rem;
-    background-color: #f4f4f4;
     text-align: center;
 }
 
 .services h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: white;
+    background: linear-gradient(to bottom, #add8e6, #87ceeb);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.services .service-cards .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+.services .service-cards .card h3,
+.services .service-cards .card p {
+    color: black;
 }
 
 .service-cards {
@@ -116,6 +137,17 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+/* Contact section */
+.contact h2 {
+    color: white;
+    background: linear-gradient(to bottom, #add8e6, #87ceeb);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Modal for displaying content */
