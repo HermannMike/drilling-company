@@ -12,6 +12,10 @@
         <div class="logo">
             <h1>DrillPro Services</h1>
         </div>
+        <nav>
+            <button id="loginBtn">Login</button>
+            <button id="signupBtn">Sign Up</button>
+        </nav>
     </header>
 
     <section class="hero">
@@ -31,29 +35,16 @@
     </section>
 
     <section class="services">
-        <h2>Our Services</h2>
-        <div class="service-cards">
-            <div class="card">
-                <h3>Oil  drilling</h3>
-                <p>We offer reliable and efficient drilling solutions for oil and gas extraction.</p>
-            </div>
-            <div class="card">
-                <h3>Geothermal Drilling</h3>
-                <p>Expert geothermal drilling services for renewable energy projects.</p>
-            </div>
-            <div class="card">
-                <h3>Water Well Drilling</h3>
-                <p>Providing safe and sustainable water well drilling services.</p>
-
-            </div>
-            <div class="card">
-                <h3>Environmental Drilling</h3>
-                <p>Specialized drilling for environmental monitoring and remediation projects.</p>
-            </div>
-            <div class="card">
-                <h3>Mining Drilling</h3>
-                <p>Advanced drilling solutions for mineral exploration and mining operations.</p>
-            </div>
+        <button id="servicesBtn" class="services-button">Our Services</button>
+        <div id="servicesDetails" class="services-details" style="display: none;">
+            <ul>
+                <li><strong>Water Well Drilling:</strong> For domestic, agricultural, and commercial clients.</li>
+                <li><strong>Geotechnical Drilling:</strong> For site investigations and soil sampling.</li>
+                <li><strong>Mining and Exploration Drilling:</strong> Specializing in mineral exploration.</li>
+                <li><strong>Construction Drilling:</strong> For large-diameter piling and foundation work.</li>
+                <li><strong>Well Maintenance and Repair:</strong> Including pump installation, development, and deepening.</li>
+                <li><strong>Well Abandonment:</strong> Safe and compliant closure of old wells.</li>
+            </ul>
         </div>
     </section>
 
@@ -65,7 +56,7 @@
     <section class="founder" style="padding-bottom: 100px;">
         <p style="color: black; text-align: center; font-size: 1.2rem; margin-bottom: 20px;">Founded by Herman Mike</p>
         <p style="color: green; text-align: center; font-size: 1.1rem; font-style: italic; font-weight: bold; margin-bottom: 20px; text-indent: 20px;">Our mission is to deliver sustainable and efficient drilling solutions that empower development.</p>
-        <p style="width: 50%; text-align: left; font-size: 1rem;">The company is a newly established drilling firm founded by Herman Mike in 2021. Since its inception, it has been running smoothly and steadily growing its reputation for reliability, efficiency, and professionalism in the drilling industry. The company specializes in providing high-quality drilling services such as borehole and well drilling, using modern equipment and skilled personnel to ensure safe and timely project completion. Guided by a commitment to innovation, safety, and customer satisfaction, the company has built strong relationships with clients and partners while maintaining consistent operational success. With a focus on quality workmanship and continuous improvement, the firm aims to become one of the most trusted names in drilling services within the region and beyond.</p>
+        <p style="width: 50%; text-align: left; font-size: 1rem; color: white;">The company is a newly established drilling firm founded by Herman Mike in 2021. Since its inception, it has been running smoothly and steadily growing its reputation for reliability, efficiency, and professionalism in the drilling industry. The company specializes in providing high-quality drilling services such as borehole and well drilling, using modern equipment and skilled personnel to ensure safe and timely project completion. Guided by a commitment to innovation, safety, and customer satisfaction, the company has built strong relationships with clients and partners while maintaining consistent operational success. With a focus on quality workmanship and continuous improvement, the firm aims to become one of the most trusted names in drilling services within the region and beyond. DrillPro Services was established in 2020 with a vision to revolutionize the drilling industry through innovation, safety, and sustainability. As a leading provider of drilling solutions, we specialize in oil, geothermal, water well, environmental, and mining drilling services. Our team of experienced professionals is committed to delivering high-quality results while prioritizing environmental responsibility and community impact. With over 10 years of combined experience in the field, Herman Mike brings a wealth of knowledge and passion to every project. We pride ourselves on using state-of-the-art technology and adhering to the highest safety standards to ensure efficient and reliable operations.</p>
         <div style="margin-top: 20px;">
             <div style="display: flex; align-items: center; margin-bottom: 10px;">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/250px-Instagram_logo_2022.svg.png" alt="Instagram" style="width: 30px; height: 30px; margin-right: 5px;">
@@ -95,11 +86,36 @@
             <span class="close">&times;</span>
             <h2>Contact Us</h2>
             <form id="contactForm">
-                
+
                 <input type="text" id="name" placeholder="Your Name" required>
                 <input type="email" id="email" placeholder="Your Email" required>
                 <textarea id="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Your Email" required>
+                <input type="password" id="loginPassword" placeholder="Your Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <input type="text" id="firstName" placeholder="First Name" required>
+                <input type="text" id="idNumber" placeholder="ID Number" required>
+                <input type="email" id="signupEmail" placeholder="Your Email" required>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
     </div>
