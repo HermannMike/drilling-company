@@ -1,10 +1,9 @@
-// Using React from CDN (global React and ReactDOM) version 19
+// Using React from CDN (global React and ReactDOM) version 16
 const { useState } = React;
 
-// Simple React component for the contact form
+// React component for contact form
 function ContactForm() {
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
     message: ''
   });
@@ -29,7 +28,7 @@ function ContactForm() {
       const data = await response.json();
       if (response.ok) {
         alert(data.message);
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ email: '', message: '' });
         document.getElementById('contactModal').style.display = 'none';
       } else {
         alert(data.error || 'An error occurred. Please try again.');
@@ -45,14 +44,6 @@ function ContactForm() {
     React.createElement('h2', null, 'Contact Us'),
     React.createElement('form', { onSubmit: handleSubmit, method: 'post' },
       React.createElement('input', {
-        type: 'text',
-        name: 'name',
-        placeholder: 'Your Name',
-        value: formData.name,
-        onChange: handleChange,
-        required: true
-      }),
-      React.createElement('input', {
         type: 'email',
         name: 'email',
         placeholder: 'Your Email',
@@ -62,7 +53,7 @@ function ContactForm() {
       }),
       React.createElement('textarea', {
         name: 'message',
-        placeholder: 'Your Message',
+        placeholder: 'What you would like from our service',
         value: formData.message,
         onChange: handleChange,
         required: true
@@ -140,6 +131,7 @@ function SignupForm() {
   const [formData, setFormData] = useState({
     firstName: '',
     idNumber: '',
+    phoneNumber: '',
     email: '',
     password: ''
   });
@@ -164,7 +156,7 @@ function SignupForm() {
       const data = await response.json();
       if (response.ok) {
         alert(data.message);
-        setFormData({ firstName: '', idNumber: '', email: '', password: '' });
+        setFormData({ firstName: '', idNumber: '', phoneNumber: '', email: '', password: '' });
         document.getElementById('signupModal').style.display = 'none';
       } else {
         alert(data.error || 'An error occurred. Please try again.');
@@ -196,6 +188,14 @@ function SignupForm() {
         required: true
       }),
       React.createElement('input', {
+        type: 'tel',
+        name: 'phoneNumber',
+        placeholder: 'Phone Number',
+        value: formData.phoneNumber,
+        onChange: handleChange,
+        required: true
+      }),
+      React.createElement('input', {
         type: 'email',
         name: 'email',
         placeholder: 'Your Email',
@@ -216,15 +216,6 @@ function SignupForm() {
   );
 }
 
-// Render the React components into the modals
-const contactModalContent = document.getElementById('contactModal').querySelector('.modal-content');
-const contactRoot = ReactDOM.createRoot(contactModalContent);
-contactRoot.render(React.createElement(ContactForm));
 
-const loginModalContent = document.getElementById('loginModal').querySelector('.modal-content');
-const loginRoot = ReactDOM.createRoot(loginModalContent);
-loginRoot.render(React.createElement(LoginForm));
 
-const signupModalContent = document.getElementById('signupModal').querySelector('.modal-content');
-const signupRoot = ReactDOM.createRoot(signupModalContent);
-signupRoot.render(React.createElement(SignupForm));
+

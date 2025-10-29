@@ -2,28 +2,41 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const contactBtn = document.getElementById('contactBtn');
-    const contactModal = document.getElementById('contactModal');
     const loginBtn = document.getElementById('loginBtn');
     const loginModal = document.getElementById('loginModal');
     const signupBtn = document.getElementById('signupBtn');
     const signupModal = document.getElementById('signupModal');
     const servicesBtn = document.getElementById('servicesBtn');
     const servicesDetails = document.getElementById('servicesDetails');
-    if (contactBtn) {
-        contactBtn.addEventListener('click', function() {
-            contactModal.style.display = 'block';
-        });
-    }
 
     if (loginBtn) {
         loginBtn.addEventListener('click', function() {
             loginModal.style.display = 'block';
+            const loginModalContent = document.getElementById('loginModal').querySelector('.modal-content');
+            if (loginModalContent && !loginModalContent.hasChildNodes()) {
+                ReactDOM.render(React.createElement(LoginForm), loginModalContent);
+            }
         });
     }
 
     if (signupBtn) {
         signupBtn.addEventListener('click', function() {
             signupModal.style.display = 'block';
+            const signupModalContent = document.getElementById('signupModal').querySelector('.modal-content');
+            if (signupModalContent && !signupModalContent.hasChildNodes()) {
+                ReactDOM.render(React.createElement(SignupForm), signupModalContent);
+            }
+        });
+    }
+
+    if (contactBtn) {
+        contactBtn.addEventListener('click', function() {
+            const contactModal = document.getElementById('contactModal');
+            contactModal.style.display = 'block';
+            const contactModalContent = contactModal.querySelector('.modal-content');
+            if (contactModalContent && !contactModalContent.hasChildNodes()) {
+                ReactDOM.render(React.createElement(ContactForm), contactModalContent);
+            }
         });
     }
 
@@ -43,14 +56,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close modal when clicking outside of it
     window.addEventListener('click', function(event) {
-        if (event.target === contactModal) {
-            contactModal.style.display = 'none';
+        if (event.target === document.getElementById('contactModal')) {
+            document.getElementById('contactModal').style.display = 'none';
         }
-        if (event.target === loginModal) {
-            loginModal.style.display = 'none';
-        }
-        if (event.target === signupModal) {
-            signupModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
         }
     });
 
