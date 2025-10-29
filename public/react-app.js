@@ -1,4 +1,4 @@
-// Using React from CDN (global React and ReactDOM)
+// Using React from CDN (global React and ReactDOM) version 19
 const { useState } = React;
 
 // Simple React component for the contact form
@@ -140,7 +140,8 @@ function SignupForm() {
   const [formData, setFormData] = useState({
     firstName: '',
     idNumber: '',
-    email: ''
+    email: '',
+    password: ''
   });
 
   const handleChange = (e) => {
@@ -163,7 +164,7 @@ function SignupForm() {
       const data = await response.json();
       if (response.ok) {
         alert(data.message);
-        setFormData({ firstName: '', idNumber: '', email: '' });
+        setFormData({ firstName: '', idNumber: '', email: '', password: '' });
         document.getElementById('signupModal').style.display = 'none';
       } else {
         alert(data.error || 'An error occurred. Please try again.');
@@ -199,6 +200,14 @@ function SignupForm() {
         name: 'email',
         placeholder: 'Your Email',
         value: formData.email,
+        onChange: handleChange,
+        required: true
+      }),
+      React.createElement('input', {
+        type: 'password',
+        name: 'password',
+        placeholder: 'Your Password',
+        value: formData.password,
         onChange: handleChange,
         required: true
       }),

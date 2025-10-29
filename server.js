@@ -61,10 +61,10 @@ app.post('/api/login', (req, res) => {
 
 // Route for handling signup
 app.post('/api/signup', (req, res) => {
-    const { firstName, idNumber, email } = req.body;
+    const { firstName, idNumber, email, password } = req.body;
 
     // Validate the incoming data
-    if (!firstName || !idNumber || !email) {
+    if (!firstName || !idNumber || !email || !password) {
         return res.status(400).json({ error: 'All fields are required' });
     }
 
@@ -75,7 +75,7 @@ app.post('/api/signup', (req, res) => {
     }
 
     // Store the user (in a real-world scenario, store this in a database with hashed password)
-    users.push({ firstName, idNumber, email, password: 'defaultpassword' }); // Placeholder password
+    users.push({ firstName, idNumber, email, password }); // Store provided password
 
     // Respond with success
     res.status(200).json({ message: 'Sign up successful' });

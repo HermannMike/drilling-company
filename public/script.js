@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const signupModal = document.getElementById('signupModal');
     const servicesBtn = document.getElementById('servicesBtn');
     const servicesDetails = document.getElementById('servicesDetails');
-    const closeBtns = document.querySelectorAll('.close');
-
     if (contactBtn) {
         contactBtn.addEventListener('click', function() {
             contactModal.style.display = 'block';
@@ -31,17 +29,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (servicesBtn) {
         servicesBtn.addEventListener('click', function() {
-            servicesDetails.style.display = servicesDetails.style.display === 'none' ? 'block' : 'none';
+            if (servicesDetails.style.display === 'none' || servicesDetails.style.display === '') {
+                servicesDetails.style.display = 'block';
+                servicesDetails.classList.add('show');
+            } else {
+                servicesDetails.classList.remove('show');
+                setTimeout(() => {
+                    servicesDetails.style.display = 'none';
+                }, 500); // Match transition duration
+            }
         });
     }
-
-    closeBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            contactModal.style.display = 'none';
-            loginModal.style.display = 'none';
-            signupModal.style.display = 'none';
-        });
-    });
 
     // Close modal when clicking outside of it
     window.addEventListener('click', function(event) {
