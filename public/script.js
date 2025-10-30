@@ -1,23 +1,6 @@
-// Client-side JavaScript for handling button clicks and modal
+ // Client-side JavaScript for handling button clicks and modal
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to update text content based on data-i18n attributes
-    function updateContent() {
-        const elements = document.querySelectorAll('[data-i18n]');
-        elements.forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            const translation = i18n.t(key);
-            if (translation) {
-                element.textContent = translation;
-            }
-        });
-    }
-
-    // Update content on language change
-    i18n.on('languageChanged', updateContent);
-
-    // Initial content update
-    updateContent();
     const contactBtn = document.getElementById('contactBtn');
     const loginBtn = document.getElementById('loginBtn');
     const loginModal = document.getElementById('loginModal');
@@ -89,20 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Login and signup forms are now handled by React
 
-    // Language toggle
-    const langEnBtn = document.getElementById('lang-en');
-    const langEsBtn = document.getElementById('lang-es');
-    if (langEnBtn) {
-        langEnBtn.addEventListener('click', function() {
-            i18n.changeLanguage('en');
-            updateContent();
-        });
-    }
-    if (langEsBtn) {
-        langEsBtn.addEventListener('click', function() {
-            i18n.changeLanguage('es');
-            updateContent();
-        });
-    }
+
 });
 
