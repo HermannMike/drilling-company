@@ -43,10 +43,9 @@
     },
     "signup": {
       "title": "Sign Up",
-      "firstName": "First Name",
+      "name": "Name",
       "idNumber": "ID Number",
       "email": "Your Email",
-      "password": "Your Password",
       "submit": "Sign Up"
     }
   }

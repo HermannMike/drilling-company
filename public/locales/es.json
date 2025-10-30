@@ -43,10 +43,9 @@
     },
     "signup": {
       "title": "Registrarse",
-      "firstName": "Nombre",
+      "name": "Nombre",
       "idNumber": "Número de Identificación",
       "email": "Su Correo Electrónico",
-      "password": "Su Contraseña",
       "submit": "Registrarse"
     }
   }

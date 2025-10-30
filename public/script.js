@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (loginBtn) {
         loginBtn.addEventListener('click', function() {
+            const loginModal = document.getElementById('loginModal');
             loginModal.style.display = 'block';
-            const loginModalContent = document.getElementById('loginModal').querySelector('.modal-content');
+            const loginModalContent = loginModal.querySelector('.modal-content');
             if (loginModalContent && !loginModalContent.hasChildNodes()) {
                 ReactDOM.render(React.createElement(LoginForm), loginModalContent);
             }
@@ -21,8 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (signupBtn) {
         signupBtn.addEventListener('click', function() {
+            const signupModal = document.getElementById('signupModal');
             signupModal.style.display = 'block';
-            const signupModalContent = document.getElementById('signupModal').querySelector('.modal-content');
+            const signupModalContent = signupModal.querySelector('.modal-content');
             if (signupModalContent && !signupModalContent.hasChildNodes()) {
                 ReactDOM.render(React.createElement(SignupForm), signupModalContent);
             }

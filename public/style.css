@@ -38,6 +38,40 @@ header .logo h1 {
 nav {
     display: flex;
     gap: 10px;
+    align-items: center;
+}
+
+.inline-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.inline-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inline-form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.inline-form button {
+    padding: 8px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.inline-form button:hover {
+    background-color: #e68a00;
 }
 
 nav button {

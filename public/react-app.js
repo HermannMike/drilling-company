@@ -173,7 +173,7 @@ function SignupForm() {
       React.createElement('input', {
         type: 'text',
         name: 'firstName',
-        placeholder: i18n.t('modals.signup.firstName'),
+        placeholder: i18n.t('modals.signup.name'),
         value: formData.firstName,
         onChange: handleChange,
         required: true
@@ -197,7 +197,7 @@ function SignupForm() {
       React.createElement('input', {
         type: 'password',
         name: 'password',
-        placeholder: i18n.t('modals.signup.password'),
+        placeholder: 'Password',
         value: formData.password,
         onChange: handleChange,
         required: true
