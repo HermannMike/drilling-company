@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "title": "Your Trusted Drilling Partner",
+    "subtitle": "Innovation Driven, Precision Delivered"
+  },
+  "services": {
+    "button": "Our Services",
+    "details": {
+      "waterWell": "Water Well Drilling: For domestic, agricultural, and commercial clients.",
+      "geotechnical": "Geotechnical Drilling: For site investigations and soil sampling.",
+      "mining": "Mining and Exploration Drilling: Specializing in mineral exploration.",
+      "construction": "Construction Drilling: For large-diameter piling and foundation work.",
+      "maintenance": "Well Maintenance and Repair: Including pump installation, development, and deepening.",
+      "abandonment": "Well Abandonment: Safe and compliant closure of old wells."
+    }
+  },
+  "contact": {
+    "button": "Contact Us",
+    "description": "We provide reliable, timely and professional service."
+  },
+  "founder": {
+    "title": "Founded by Herman Mike",
+    "mission": "Our mission is to deliver sustainable and efficient drilling solutions that empower development.",
+    "description": "DrillPro Services was established in 2020 with a vision to revolutionize the drilling industry through innovation, safety, and sustainability. As a leading provider of drilling solutions, we specialize in oil, geothermal, water well, environmental, and mining drilling services. Our team of experienced professionals is committed to delivering high-quality results while prioritizing environmental responsibility and community impact. With over 10 years of combined experience in the field, herman mike brings a wealth of knowledge and passion to every project. We pride ourselves on using state-of-the-art technology and adhering to the highest safety standards to ensure efficient and reliable operations.",
+    "unique": "At DrillPro Services, we understand that every drilling project is unique. That's why we offer customized solutions tailored to meet the specific needs of our clients. Whether you're in the oil and gas sector, geothermal energy, water resource management, environmental remediation, or mining, our expertise ensures optimal results.",
+    "sustainability": "Our commitment to sustainability means we employ eco-friendly practices that minimize environmental impact. We use advanced drilling technologies that reduce waste and energy consumption, helping our clients achieve their goals while protecting the planet.",
+    "safety": "Safety is our top priority. All our operations are conducted under strict safety protocols, and our team undergoes regular training to stay updated on the latest industry standards. With DrillPro, you can trust that your project is in capable hands.",
+    "contact": "Contact us today to discuss your drilling needs and discover how we can help bring your vision to life with precision, efficiency, and reliability."
+  },
+  "footer": "© 2025 DrillPro Services | All rights reserved",
+  "modals": {
+    "contact": {
+      "title": "Contact Us",
+      "email": "Your Email",
+      "message": "What you would like from our service",
+      "submit": "Submit"
+    },
+    "login": {
+      "title": "Login",
+      "email": "Your Email",
+      "password": "Your Password",
+      "submit": "Login"
+    },
+    "signup": {
+      "title": "Sign Up",
+      "firstName": "First Name",
+      "idNumber": "ID Number",
+      "email": "Your Email",
+      "password": "Your Password",
+      "submit": "Sign Up"
+    }
+  }
+}
