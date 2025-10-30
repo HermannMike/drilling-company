@@ -1,5 +1,5 @@
-// Using React from CDN (global React and ReactDOM) version 16
-const { useState } = React;
+// Using React from CDN (global React and ReactDOM) version 19
+const { useState, useEffect } = React;
 
 // React component for contact form
 function ContactForm() {
@@ -41,24 +41,24 @@ function ContactForm() {
 
   return React.createElement('div', null,
     React.createElement('span', { className: 'close', onClick: () => { document.getElementById('contactModal').style.display = 'none'; } }, '×'),
-    React.createElement('h2', null, 'Contact Us'),
+    React.createElement('h2', null, i18n.t('modals.contact.title')),
     React.createElement('form', { onSubmit: handleSubmit, method: 'post' },
       React.createElement('input', {
         type: 'email',
         name: 'email',
-        placeholder: 'Your Email',
+        placeholder: i18n.t('modals.contact.email'),
         value: formData.email,
         onChange: handleChange,
         required: true
       }),
       React.createElement('textarea', {
         name: 'message',
-        placeholder: 'What you would like from our service',
+        placeholder: i18n.t('modals.contact.message'),
         value: formData.message,
         onChange: handleChange,
         required: true
       }),
-      React.createElement('button', { type: 'submit' }, 'Submit')
+      React.createElement('button', { type: 'submit' }, i18n.t('modals.contact.submit'))
     )
   );
 }
@@ -103,12 +103,12 @@ function LoginForm() {
 
   return React.createElement('div', null,
     React.createElement('span', { className: 'close', onClick: () => { document.getElementById('loginModal').style.display = 'none'; } }, '×'),
-    React.createElement('h2', null, 'Login'),
+    React.createElement('h2', null, i18n.t('modals.login.title')),
     React.createElement('form', { onSubmit: handleSubmit, method: 'post' },
       React.createElement('input', {
         type: 'email',
         name: 'email',
-        placeholder: 'Your Email',
+        placeholder: i18n.t('modals.login.email'),
         value: formData.email,
         onChange: handleChange,
         required: true
@@ -116,12 +116,12 @@ function LoginForm() {
       React.createElement('input', {
         type: 'password',
         name: 'password',
-        placeholder: 'Your Password',
+        placeholder: i18n.t('modals.login.password'),
         value: formData.password,
         onChange: handleChange,
         required: true
       }),
-      React.createElement('button', { type: 'submit' }, 'Login')
+      React.createElement('button', { type: 'submit' }, i18n.t('modals.login.submit'))
     )
   );
 }
@@ -131,7 +131,6 @@ function SignupForm() {
   const [formData, setFormData] = useState({
     firstName: '',
     idNumber: '',
-    phoneNumber: '',
     email: '',
     password: ''
   });
@@ -156,7 +155,7 @@ function SignupForm() {
       const data = await response.json();
       if (response.ok) {
         alert(data.message);
-        setFormData({ firstName: '', idNumber: '', phoneNumber: '', email: '', password: '' });
+        setFormData({ firstName: '', idNumber: '', email: '', password: '' });
         document.getElementById('signupModal').style.display = 'none';
       } else {
         alert(data.error || 'An error occurred. Please try again.');
@@ -169,12 +168,12 @@ function SignupForm() {
 
   return React.createElement('div', null,
     React.createElement('span', { className: 'close', onClick: () => { document.getElementById('signupModal').style.display = 'none'; } }, '×'),
-    React.createElement('h2', null, 'Sign Up'),
+    React.createElement('h2', null, i18n.t('modals.signup.title')),
     React.createElement('form', { onSubmit: handleSubmit, method: 'post' },
       React.createElement('input', {
         type: 'text',
         name: 'firstName',
-        placeholder: 'First Name',
+        placeholder: i18n.t('modals.signup.firstName'),
         value: formData.firstName,
         onChange: handleChange,
         required: true
@@ -182,23 +181,15 @@ function SignupForm() {
       React.createElement('input', {
         type: 'text',
         name: 'idNumber',
-        placeholder: 'ID Number',
+        placeholder: i18n.t('modals.signup.idNumber'),
         value: formData.idNumber,
-        onChange: handleChange,
-        required: true
-      }),
-      React.createElement('input', {
-        type: 'tel',
-        name: 'phoneNumber',
-        placeholder: 'Phone Number',
-        value: formData.phoneNumber,
         onChange: handleChange,
         required: true
       }),
       React.createElement('input', {
         type: 'email',
         name: 'email',
-        placeholder: 'Your Email',
+        placeholder: i18n.t('modals.signup.email'),
         value: formData.email,
         onChange: handleChange,
         required: true
@@ -206,12 +197,12 @@ function SignupForm() {
       React.createElement('input', {
         type: 'password',
         name: 'password',
-        placeholder: 'Your Password',
+        placeholder: i18n.t('modals.signup.password'),
         value: formData.password,
         onChange: handleChange,
         required: true
       }),
-      React.createElement('button', { type: 'submit' }, 'Sign Up')
+      React.createElement('button', { type: 'submit' }, i18n.t('modals.signup.submit'))
     )
   );
 }
